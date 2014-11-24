@@ -1,5 +1,7 @@
 <h1>Dashboard</h1>
 
+<%= Prescription.count %>
+
 <h2>Patients</h2>
 <table class="table">
   <thead>
@@ -11,6 +13,7 @@
   <% @patients.each do |patient| %>
     <tr>
       <td><%= link_to full_name(patient), patient %></td>
+      <td><%= link_to "Delete", patient, method: :delete %></td>
     </tr>
   <% end %>
   </tbody>
@@ -27,6 +30,7 @@
   <% @medications.each do |medication| %>
       <tr>
         <td><%= link_to medication.name, medication %></td>
+        <td><%= link_to "Delete", medication, method: :delete %></td>
       </tr>
   <% end %>
   </tbody>
